@@ -20,8 +20,8 @@ To compile and run _locateObj.py_ make sure the directory tree looks like the fo
         - stoplist
         - ...
     - Groundhog day/
-        - I_01001.jpg (must be 5 digits bigger than 1000 and less than 1500)
-        - I_01002.jpg
+        - I_02001.jpg (must be 5 digits)
+        - I_02002.jpg
         - ...
     - Results/
     - locateObj.py
