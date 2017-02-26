@@ -20,7 +20,7 @@ To compile and run _locateObj.py_ make sure the directory tree looks like the fo
         - stoplist
         - ...
     - Groundhog day/
-        - I_01001.jpg (must be 5 digits bigger than 60 and less than 3000)
+        - I_01001.jpg (must be 5 digits bigger than 1000 and less than 1500)
         - I_01002.jpg
         - ...
     - Results/
@@ -37,9 +37,9 @@ Once you select the object, a green bounding box appears.
 4. Be patient and wait for the final result, together with the immediate results.
 This process takes a few seconds, since the program shows each picture for at least 2 seconds.
 
-Some clarification:
+Some clarifications:
 - The folder named "Model" stores pre-computed bag of visual words, stop list, word frequency and kmeans object. They are all computed with part of the Groundhog data set with functions written in _featureExtractor.py_.
-- You can watch the final results in the folder named "Results". 
+- You can watch the final results in the folder named "Results".
 
 
 ## Reference
