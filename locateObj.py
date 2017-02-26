@@ -104,7 +104,7 @@ def pixelScore(sub, kmeans, list, hQ, img_shape):
 # Test whether RVP algorithm works as expected
 
 img_path = '.\\Groundhog day\\I_02000.jpg'
-match_path = '.\\Groundhog day\\I_02000.jpg'
+match_path = '.\\Groundhog day\\I_02001.jpg'
 
 kmeans_filename = '.\\Model\\kmeans'
 stoplist_filename = '.\\Model\\stoplist'
@@ -115,7 +115,7 @@ score_filename = '.\\Model\\score'
 # K: integer, total number of partition, eg 200
 # alpha: float, coefficient used to conpute threshold for object localization
 (M, N, K) = (8, 8, 50)
-alpha = 2.68
+alpha = 2.6
 
 # Read image that contains roi (region of interest)
 # and select roi
