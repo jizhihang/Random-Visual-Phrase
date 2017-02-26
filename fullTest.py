@@ -6,11 +6,11 @@ import cv2
 import pickle
 import featureExtractor as fe
 
-kmeans_filename = '.\\data\\kmeans'
-vector_filename = '.\\data\\vector'
-doc_filename = '.\\data\\doc_occ'
-stoplist_filename = '.\\data\\stoplist'
-score_filename = '.\\data\\score'
+kmeans_filename = '.\\Model\\kmeans'
+vector_filename = '.\\Model\\vector'
+doc_filename = '.\\Model\\doc_occ'
+stoplist_filename = '.\\Model\\stoplist'
+score_filename = '.\\Model\\score'
 
 img_path = '.\\Groundhog day\\I_02276.jpg'
 cluster_num = 200

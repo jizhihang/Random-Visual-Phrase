@@ -103,19 +103,19 @@ def pixelScore(sub, kmeans, list, hQ, img_shape):
 # Test code for locateObj.py
 # Test whether RVP algorithm works as expected
 
-img_path = '.\\Groundhog day\\I_02350.jpg'
-match_path = '.\\Groundhog day\\I_02330.jpg'
+img_path = '.\\Groundhog day\\I_02000.jpg'
+match_path = '.\\Groundhog day\\I_02000.jpg'
 
-kmeans_filename = '.\\data\\kmeans'
-stoplist_filename = '.\\data\\stoplist'
-score_filename = '.\\data\\score'
+kmeans_filename = '.\\Model\\kmeans'
+stoplist_filename = '.\\Model\\stoplist'
+score_filename = '.\\Model\\score'
 
 # M: integer, number of rows in each partition, eg 8
 # N: integer, number of columns in each partition, eg 16
 # K: integer, total number of partition, eg 200
 # alpha: float, coefficient used to conpute threshold for object localization
 (M, N, K) = (8, 8, 50)
-alpha = 2.0
+alpha = 2.68
 
 # Read image that contains roi (region of interest)
 # and select roi
@@ -130,6 +130,7 @@ while True:
         break
 
 cv2.destroyAllWindows()
+cv2.imwrite('.//Results//original_img.jpg', img)
 
 # Crop the roi out
 if len(corner) == 2:
@@ -141,7 +142,8 @@ if len(corner) == 2:
 
 cv2.namedWindow('roi')
 cv2.imshow('roi', roi)
-cv2.waitKey()
+cv2.waitKey(2000)
+cv2.imwrite('.//Results//roi.jpg', roi)
 
 # Extract SIFT descriptors of roi
 sift = cv2.SIFT()
@@ -187,7 +189,8 @@ print 'show_score data type: ', show_score.dtype, '\n'
 show_score /= np.max(show_score)#
 cv2.namedWindow('score')
 cv2.imshow('score', show_score)
-cv2.waitKey()
+cv2.waitKey(2000)
+cv2.imwrite('.//Results//score.jpg', show_score * 255)
 
 # Store original similarity score array
 with open(score_filename, 'wb') as score_out:
@@ -201,7 +204,7 @@ mask[show_score >= thres] = 1
 
 cv2.namedWindow('match')
 cv2.imshow('match', img)
-cv2.waitKey()
+cv2.waitKey(2000)
 
 
 img = img.astype(float)
@@ -209,8 +212,8 @@ img /= 255
 img *= mask[:, :, None]
 cv2.namedWindow('image')
 cv2.imshow('image', img)
+cv2.imwrite('.//Results//final_result.jpg', img * 255)
 
-key = cv2.waitKey() & 0xFF
-if key == 27:
-    cv2.destroyAllWindows()#
+cv2.waitKey(5000)
+cv2.destroyAllWindows()
 
